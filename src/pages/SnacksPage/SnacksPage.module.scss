@@ -1,0 +1,17 @@
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
