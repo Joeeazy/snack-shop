@@ -1,0 +1,47 @@
+// NavBar.module.scss
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #faf7e5;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  .navlink {
+    text-decoration: none;
+    color: #6e6c6c; 
+    padding: 10px;
+    font-size: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #000; // Dark underline color
+      transition: width 0.3s;
+      margin: auto;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+
+    // &.active {
+    //   font-weight: bold;
+    //   color: #000;
+
+    //   &::after {
+    //     width: 100%;
+    //   }
+    // }
+  }
+}

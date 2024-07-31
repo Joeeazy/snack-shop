@@ -1,18 +1,28 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import styles from './SnackCard.module.scss'
 
-export const Snack = ({snack}) => {
+export const SnackCard = ({ snack }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+   navigate(`/snacks/${snack.id}`)
+  }
   return (
-    <div  style={{padding:'2rem', display:'flex',flexDirection:'column',justifyContent:'center',alignContent:'center'}}>
-      <h3>Name: {snack.snackName}</h3>
-      <p>{snack.description}</p>
-      <p>{snack.stock}</p>
-      <p>{snack.price}</p>
-      {/* <h4>Type: {snack.type}</h4>
-      <h4>Special Attack: {snack['special-attack']}</h4> */}
-      <img src={snack.imageLink} alt="snack" style={{ width: "100px", margin:'0 auto'}} />
-      <Link to={snack.id} style={{marginTop:'1rem'}}>See more</Link>
-</div>
+    <div className={styles.card} onClick={handleCardClick}>
+      <div className={styles.imgAndBtnContainer}>
+        <img src={snack.imageLink} alt="snack" className={styles.image} />
+        <button className={styles.button}>Add to Cart</button>
+      </div>
+   
+      <div className={styles.details}>
+      <p className={styles.brand}>{snack.brand}</p>
+      <p className={styles.name}>{snack.snackName}</p>
+      {/* <p className={styles.description}>{snack.description}</p> */}
+      {/* <p className={styles.stock}>{snack.stock}</p> */}
+      <p className={styles.price}>$ {snack.price}</p>
+     
+    </div>
+  </div>
    
   )
 }

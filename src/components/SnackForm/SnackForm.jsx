@@ -6,6 +6,7 @@ const SnackForm = ({ handleUpdateSnack, handleAddSnack, formType, mode = 'Add', 
     imageLink: '',
     description: '',
     price: '',
+    brand:'',
     stock: ''
   });
 
@@ -16,7 +17,8 @@ const SnackForm = ({ handleUpdateSnack, handleAddSnack, formType, mode = 'Add', 
         imageLink: snack.imageLink || '',
         description: snack.description || '',
         price: snack.price || '',
-        stock: snack.stock || ''
+        stock: snack.stock || '',
+        brand: snack.brand || '',
       });
     }
   }, [snack]);
@@ -64,6 +66,18 @@ const SnackForm = ({ handleUpdateSnack, handleAddSnack, formType, mode = 'Add', 
       </div>
 
       <div style={{ marginBottom: '15px' }}>
+        <label htmlFor="brandInput" style={{ display: 'block', marginBottom: '5px' }}>Brand</label>
+        <input
+          type="text"
+          id="brandInput"
+          name="brand"
+          value={formData.brand}
+          onChange={handleChange}
+          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+        />
+      </div>
+
+      <div style={{ marginBottom: '15px' }}>
         <label htmlFor="priceInput" style={{ display: 'block', marginBottom: '5px' }}>Price</label>
         <input
           type="number"
@@ -77,7 +91,7 @@ const SnackForm = ({ handleUpdateSnack, handleAddSnack, formType, mode = 'Add', 
 
       <div style={{ marginBottom: '15px' }}>
         <label htmlFor="descriptionInput" style={{ display: 'block', marginBottom: '5px' }}>Description</label>
-        <input
+        <textarea
           type="text"
           id="descriptionInput"
           name="description"
