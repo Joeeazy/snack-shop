@@ -5,10 +5,11 @@
   justify-content: space-around;
   align-items: center;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
-  background: #faf7e5;
+  background-color: #fbd870;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -17,7 +18,7 @@
     text-decoration: none;
     color: #6e6c6c; 
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     position: relative;
 
     &::after {

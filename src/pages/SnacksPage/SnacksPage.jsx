@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getAllSnack } from "../../services/snack"
 
 import styles from './SnacksPage.module.scss'
-import { SnackCard } from '../../components/SnackCard/SnackCard'
+import  SnackCard  from '../../components/SnackCard/SnackCard'
 
 
 

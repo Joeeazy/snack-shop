@@ -8,6 +8,7 @@ import SnackLoader from './containers/SnackLoader/SnackLoader';
 import AddSnackPage from './pages/AddSnackPage/AddSnackPage';
 import EditSnackPage from './pages/EditPokemonPage/EditSnackPage';
 import LandingPage from './pages/LandingPage/LandingPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/snacks/:id" element={<SnackLoader />} />
         <Route path="/snacks/:id/edit" element={<EditSnackPage />} />
       </Routes>
+    <Footer/>
     </Router>
   );
 }

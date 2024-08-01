@@ -1,17 +1,24 @@
 import { Link, useNavigate } from "react-router-dom"
 import styles from './SnackCard.module.scss'
 
-export const SnackCard = ({ snack }) => {
+ const SnackCard = ({ snack }) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
    navigate(`/snacks/${snack.id}`)
   }
+   
+   const handleAddToCart = (e) =>{
+     e.stopPropagation()
+     console.log('Added to cart:', snack.snackName);
+  }
+   
   return (
     <div className={styles.card} onClick={handleCardClick}>
       <div className={styles.imgAndBtnContainer}>
         <img src={snack.imageLink} alt="snack" className={styles.image} />
-        <button className={styles.button}>Add to Cart</button>
+        <button className={styles.button}
+        onClick={handleAddToCart}>Add to Cart</button>
       </div>
    
       <div className={styles.details}>
@@ -26,3 +33,5 @@ export const SnackCard = ({ snack }) => {
    
   )
 }
+
+export default SnackCard
