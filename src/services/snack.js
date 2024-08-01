@@ -4,11 +4,23 @@ import { db } from "../config/firestore";
 export const getAllSnack = async () => {
   const collectionRef = collection(db, 'snack')
   const snapshot = await getDocs(collectionRef)
-  console.log(snapshot);
+  // console.log(snapshot);
   const cleanData = snapshot.docs.map((doc) => {
     return {id:doc.id, ...doc.data()}
   })
   console.log(cleanData);
+  return cleanData
+}
+
+export const getCheapSnack = async () => {
+  const collectionRef = collection(db, 'snack')
+  const snapshot = await getDocs(collectionRef)
+  const cleanData = snapshot.docs
+    .filter((doc) => doc.data().price < 40)
+    .map((doc) => {
+     return {id:doc.id, ...doc.data()}
+    })  
+
   return cleanData
 }
 
