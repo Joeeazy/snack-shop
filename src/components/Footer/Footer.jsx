@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Footer.module.scss'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Footer = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
+ 
   const handleShopNow = () => {
-    navigate('/snacks')
-  }
-
+    navigate('/snacks');
+    setTimeout(() => {
+      window.scrollTo(0, 0); // Scroll to the top of the page
+    }, 0);
+  };
   return (
     <div
       className={styles.footerContainer}
