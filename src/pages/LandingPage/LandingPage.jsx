@@ -8,11 +8,13 @@ const LandingPage = () => {
   const [allSnacks, setAllSnacks] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 4
+
+
   
   const [cheapSnacks, setCheapSnacks] = useState([]);
   const navigate=useNavigate()
 
- 
+
 
   useEffect(() => {
     getCheapSnack()
@@ -64,8 +66,6 @@ const LandingPage = () => {
      </section>
 
       <section className={styles.carouselSection}>
-
-        <div className={styles.carousel}>
           <div className={styles.carouselTileAndArrows}>
             <button onClick={prevSlide} className={styles.navButton}>
               <img src="./src/assets/icons8-back-50.png" alt="Previous" />
@@ -82,25 +82,31 @@ const LandingPage = () => {
               width: `${allSnacks.length * 100}%`,
             }}
           >
-            {allSnacks.map((cheapSnack, index) => (
+            {allSnacks.map((snack, index) => (
               <div
-                key={cheapSnack.id}
+                key={snack.id}
                 className={styles.carouselItem}
-                // style={{ width: `{calc(100%/${itemsPerPage}) / ${allSnacks.length}%` }}
-               
               >
-                <SnackCard snack={cheapSnack} />
+                <SnackCard snack={snack} />
               </div>
             ))}
-          </div>
         </div>
-
       </section>
 
+      <div className={styles.onlyShowInSmallScreenSection}>
+      <section className={styles.topSellSnacksSection}>
+        <p className={styles.topSellSnackP}>Shop Our Best Selling Snack Boxes and Gifts</p>
+        <div className={styles.topSellSnackInner}>
+      {allSnacks.slice(0,8).map((snack) => (
+        <SnackCard key={snack.id} snack={snack} />
+      ))}
+          </div>
+    </section>
+    </div>
 
-
+    
       <section className={styles.cheapSnacksSection}>
-        <p>Valuable Sell Snacks</p>
+        <p className={styles.cheapSnackP}>Valuable Sell Snacks</p>
         <div className={styles.cheapSnackInner}>
       {cheapSnacks.map((cheapSnack) => (
         <SnackCard key={cheapSnack.id} snack={cheapSnack} />
