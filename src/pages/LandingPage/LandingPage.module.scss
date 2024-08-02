@@ -97,8 +97,9 @@
       margin: 0;
       flex-grow: 1;
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: xx-large;
+      font-weight: 500;
+    
     
       
     }
@@ -144,6 +145,7 @@
 
 
 
+
   .section {
     display: flex;
     flex-direction: column;
@@ -153,8 +155,9 @@
   }
 
   .sectionTitle {
-    font-size: 1.5rem; 
-    font-weight: 600;
+    font-size: xx-large;
+    font-weight: 500;
+  
 
     @media screen and (max-width: 768px) {
       font-size: 1.1rem;
