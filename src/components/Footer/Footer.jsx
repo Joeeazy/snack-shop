@@ -1,7 +1,13 @@
 import React from 'react'
 import styles from './Footer.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+  const navigate=useNavigate()
+  const handleShopNow = () => {
+    navigate('/snacks')
+  }
+
   return (
     <div
       className={styles.footerContainer}
@@ -17,7 +23,9 @@ const Footer = () => {
         </div>
 
         <div>
-          <button className={styles.footerBtn}>Shop Now</button>
+          <button className={styles.footerBtn}
+          onClick={handleShopNow}
+          >Shop Now</button>
         </div>
         
            </div>
