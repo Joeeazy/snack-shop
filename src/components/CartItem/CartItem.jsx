@@ -1,40 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styles from './CartItem.module.scss';
+import { CartContext } from '../../context/CartContextProvider';
 
 const CartItem = ({ snack }) => {
-  const [quantity, setQuantity] = useState(1); // Initialize quantity state for each item
-  const [total, setTotal] = useState((snack.price * 1).toFixed(2)); // Initialize total based on initial quantity
 
-  useEffect(() => {
-    setTotal((snack.price * quantity).toFixed(2));
-  }, [quantity, snack.price]);
+const { updateQuantity } = useContext(CartContext);
+const [quantity, setQuantity] = useState(snack.quantity); // Initialize quantity from snack
 
-  const handleAddItem = () => {
-    setQuantity(prev => prev + 1);
-  };
+useEffect(() => {
+  setQuantity(snack.quantity);
+}, [snack.quantity]);
 
-  const handleReduceItem = () => {
-    setQuantity(prev => Math.max(prev - 1, 1)); // Ensure quantity doesn't go below 1
-  };
+  
+const handleAddItem = () => {
+    // Increment the quantity of the current snack item by 1
+  // Call the updateQuantity function from the context with the new quantity
+  updateQuantity(snack.id, quantity + 1);
+};
 
-  return (
-    <div className={styles.cartItemsInformation}>
-      <div className={styles.productInformation}>
-        <img src={snack.imageLink} alt="snack" />
-        <span>{snack.snackName}</span>
-      </div>
+const handleReduceItem = () => {
+  updateQuantity(snack.id, Math.max(quantity - 1, 1));
+};
 
-      <div className={styles.priceInformation}>
-        <span>$ {snack.price.toFixed(2)}</span>
-        <div className={styles.quantityControls}>
-          <button className={styles.quantityBtn} onClick={handleReduceItem}>-</button>
-          {quantity}
-          <button className={styles.quantityBtn} onClick={handleAddItem}>+</button>
-        </div>
-        <span>$ {total}</span>
-      </div>
+return (
+  <div className={styles.cartItemsInformation}>
+    <div className={styles.productInformation}>
+      <img src={snack.imageLink} alt="snack" />
+      <span>{snack.snackName}</span>
     </div>
-  );
+
+    <div className={styles.priceInformation}>
+      <span>$ {snack.price.toFixed(2)}</span>
+      <div className={styles.quantityControls}>
+        <button className={styles.quantityBtn} onClick={handleReduceItem}>-</button>
+        {quantity}
+        <button className={styles.quantityBtn} onClick={handleAddItem}>+</button>
+      </div>
+      <span>$ {(snack.price * quantity).toFixed(2)}</span>
+    </div>
+  </div>
+);
 };
 
 export default CartItem;

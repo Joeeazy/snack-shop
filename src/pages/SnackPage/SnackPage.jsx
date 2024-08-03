@@ -28,11 +28,13 @@ const SnackPage = ({ snack }) => {
         <div className={styles.quantity}>
           <span>{snack.stock}</span>
 
-          <div className={styles.quantityControls}>
+          {/* can do this feather in the future */}
+
+          {/* <div className={styles.quantityControls}>
             <button className={styles.quantityBtn}>-</button>
             <span>1</span>
             <button className={styles.quantityBtn}>+</button>
-          </div>
+          </div> */}
 
         </div>
         <button className={styles.addToCartBtn}>ADD TO CART</button>

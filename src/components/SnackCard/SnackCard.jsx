@@ -7,25 +7,20 @@ import { toast } from 'react-toastify';
 // use react-toastify to set an alert! Place  { ToastContainer } in app.js so the alert only shows to the top right of screen on the snacksPage. If place  { ToastContainer }  in snack card component, it will show both inside card and top right of screen.
 
 const SnackCard = ({ snack }) => {
-  const { cartList, setCartList } = useContext(CartContext);
+  const { cartList, addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleCardClick = () => {
     navigate(`/snacks/${snack.id}`);
   };
    
-  const isInCart = (snack) => {
-    return cartList.some((m) => m.id === snack.id);
-  };
+
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
-    console.log('Added to cart:', snack.snackName);
-    if (!isInCart(snack)) {
-      const newSnackList = [...cartList, snack];
-      setCartList(newSnackList);
-      toast.success(`${snack.snackName} has been added to your cart`);
-    }
+    addToCart(snack)
+    toast.success(`${snack.snackName} has been added to your cart`);
+    
   };
 
   console.log('cartList', cartList);
