@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './CartItem.module.scss'
 
-const CartItem = ({snack}) => {
+const CartItem = ({ snack }) => {
+  const [total, setTotal] = useState(snack.price*1)
+  const [quantity,setQuantity]=useState(1)
+  
+  useEffect(() => {
+    setTotal((snack.price*quantity).toFixed(2))
+  },[quantity,snack.price])
+  
+
   return (
 
     <div className={styles.cartItemsInformation}>
@@ -12,9 +20,9 @@ const CartItem = ({snack}) => {
       
 
     <div className={styles.priceInformation}>
-        <span>$ {snack.price}</span>
-        <span>quantity</span>
-        <span>$ total amount</span>
+        <span>$ {snack.price.toFixed(2)}</span>
+        <span>1</span>
+        <span>$ {total}</span>
     </div>
    
  

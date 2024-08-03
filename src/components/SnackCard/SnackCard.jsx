@@ -42,7 +42,7 @@ const SnackCard = ({ snack }) => {
       <div className={styles.details}>
         <p className={styles.brand}>{snack.brand}</p>
         <p className={styles.name}>{snack.snackName}</p>
-        <p className={styles.price}>${snack.price}</p>
+        <p className={styles.price}>${snack.price.toFixed(2)}</p>
       </div>
     </div>
   );
