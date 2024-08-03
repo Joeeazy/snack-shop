@@ -11,10 +11,15 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import Footer from './components/Footer/Footer';
 import CartContextProvider from './context/CartContextProvider';
 import MyCartPage from './pages/MyCartPage/MyCartPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// use react-toastify to set an alert! Place  { ToastContainer } in app.js so the alert only shows to the top right of screen on the snacksPage. If place  { ToastContainer }  in snack card component, it will show both inside card and top right of screen.
 
 function App() {
   return (
     <BrowserRouter>
+       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} />
       <NavBar />
       <CartContextProvider>
         <Routes>
