@@ -1,11 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './MyCartPage.module.scss'
 import { CartContext } from '../../context/CartContextProvider';
 import CartItem from '../../components/CartItem/CartItem';
+import { useEffect } from 'react';
 
 const MyCartPage = () => {
   const { cartList } = useContext(CartContext);
+  const [subTotal,setSubTotal]=useState(0)
   
+  useEffect(() => {
+    // Calculate the subtotal whenever cartList changes
+    const total = cartList.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    setSubTotal(total.toFixed(2));
+  }, [cartList]);
 
   
   return (
@@ -37,9 +44,14 @@ const MyCartPage = () => {
           
           <div className={styles.cartItems}>
             {cartList.map((item) => (
-              <CartItem key={item.id} snack={item} />
+              <CartItem key={item.id} snack={item} setSubTotal={setSubTotal} />
             ))}
-          </div>
+            </div>
+            
+            <div className={styles.cartCheckOutContainer}>
+              <p className={styles.subTotal}>Subtotal: ${subTotal}</p>
+              <button className={styles.checkOutBtn}>CHECK OUT</button>
+            </div>
 
           </div>       
 

@@ -1,15 +1,22 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styles from './CartItem.module.scss';
 import { CartContext } from '../../context/CartContextProvider';
+import { useNavigate } from "react-router-dom";
 
-const CartItem = ({ snack }) => {
+const CartItem = ({ snack}) => {
 
 const { updateQuantity } = useContext(CartContext);
 const [quantity, setQuantity] = useState(snack.quantity); // Initialize quantity from snack
+const navigate = useNavigate();
 
 useEffect(() => {
   setQuantity(snack.quantity);
 }, [snack.quantity]);
+  
+const handleCardClick = () => {
+  navigate(`/snacks/${snack.id}`);
+};
+ 
 
   
 const handleAddItem = () => {
@@ -24,7 +31,7 @@ const handleReduceItem = () => {
 
 return (
   <div className={styles.cartItemsInformation}>
-    <div className={styles.productInformation}>
+    <div className={styles.productInformation} onClick={handleCardClick}>
       <img src={snack.imageLink} alt="snack" />
       <span>{snack.snackName}</span>
     </div>
