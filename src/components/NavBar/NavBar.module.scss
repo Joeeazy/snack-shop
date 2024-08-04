@@ -20,6 +20,9 @@
     padding: 10px;
     font-size: 1.3rem;
     position: relative;
+    @media screen and (max-width: 480px) {
+      font-size: 1rem;
+    }
 
     &::after {
       content: '';

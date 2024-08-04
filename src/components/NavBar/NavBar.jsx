@@ -10,8 +10,8 @@ const NavBar = () => {
       <NavLink to="/snacks" className={styles.navlink} >Snacks</NavLink>
 
     {/* need to do Healthy and Gift path later too!  */}
-      {/* <NavLink to="/snacks" className={styles.navlink} >Healthy Snacks</NavLink>
-      <NavLink to="/snacks" className={styles.navlink} >Gift Packages</NavLink> */}
+      <NavLink to="/snacks" className={styles.navlink} >Healthy Snacks</NavLink>
+      <NavLink to="/snacks" className={styles.navlink} >Gift Packages</NavLink>
 
       {/* <NavLink to="/snacks/add" className={styles.navlink} >Add Snacks</NavLink> */}
 
