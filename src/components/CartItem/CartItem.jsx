@@ -33,17 +33,18 @@ return (
   <div className={styles.cartItemsInformation}>
     <div className={styles.productInformation} onClick={handleCardClick}>
       <img src={snack.imageLink} alt="snack" />
-      <span>{snack.snackName}</span>
+      <span className={styles.snackNameShowOnBigScreen}>{snack.snackName}</span>
     </div>
 
     <div className={styles.priceInformation}>
+    <span className={styles.snackNameShowOnSmallScreen}>{snack.snackName}</span>
       <span>$ {snack.price.toFixed(2)}</span>
       <div className={styles.quantityControls}>
         <button className={styles.quantityBtn} onClick={handleReduceItem}>-</button>
         {quantity}
         <button className={styles.quantityBtn} onClick={handleAddItem}>+</button>
       </div>
-      <span>$ {(snack.price * quantity).toFixed(2)}</span>
+      <span className={styles.totalPrice}>$ {(snack.price * quantity).toFixed(2)}</span>
     </div>
   </div>
 );

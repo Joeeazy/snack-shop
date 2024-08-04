@@ -3,12 +3,18 @@
   margin-top: 100px;
   padding: 0 70px;
   color: rgb(97, 97, 97);
+  @media screen and (max-width: 768px) {
+    padding: 0 50px;
+  }
 }
 
 .myCartP{
   text-align: center;
   font-size: xx-large;
   font-weight: 500;
+  @media screen and (max-width: 480px) {
+    font-size: x-large;
+  }
 
 }
 
@@ -46,10 +52,20 @@
       text-align: center; 
     }
   }
+
+  @media screen and (max-width:768px) {
+    display: none;
+
+  }
 }
 
 .cartItems {
   width: 100%;
+  @media screen and (max-width:768px) {
+    margin-top: 40px;
+
+  }
+
 }
 
 
@@ -67,6 +83,9 @@
     font-size: xx-large;
     font-weight: 500;
     margin-bottom: 1rem;
+    @media screen and (max-width: 480px) {
+      font-size: x-large;
+    }
   }
 
   .checkOutBtn {

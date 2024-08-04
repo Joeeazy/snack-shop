@@ -72,7 +72,8 @@ const LandingPage = () => {
             </button>
             <p>Shop Our Best Selling Snack Boxes and Gifts</p>
             <button onClick={nextSlide} className={styles.navButton}>
-              <img src="./src/assets/icons8-right-arrow-50.png" alt="Next" />
+            <img src="./src/assets/icons8-right-arrow-50.png" alt="Next" />
+             
             </button>
           </div>
           <div
