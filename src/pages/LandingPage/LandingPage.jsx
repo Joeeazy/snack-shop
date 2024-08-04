@@ -29,9 +29,12 @@ const LandingPage = () => {
       .catch((e) => console.log(e));
   }, []);
   
-
+ 
+  // If there are 16 snacks, every page needs to have 4 snacks,
+  // needs 4 pages to show all the Snacks.  16/4=4 pages, every page has an index. 4 pages index(0,1,2,3) 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
+    // If the current index is 0, set it to the last slide index, otherwise decrement by 1
       prevIndex === 0 ? Math.ceil(allSnacks.length/itemsPerPage) - 1 : prevIndex - 1
     );
   };
@@ -79,11 +82,11 @@ const LandingPage = () => {
           <div
             className={styles.carouselInner}
             style={{
-              transform: `translateX(-${currentIndex * (100 / allSnacks.length)}%)`,
-              width: `${allSnacks.length * 100}%`,
+              transform: `translateX(-${currentIndex * (100 / allSnacks.length)}%)`, // Moves the carousel to show the current slide， if currentIndex=2, 2*100/16=12.5% ， translateX - means move to left. 
+              width: `${allSnacks.length * 100}%`, // base on itemsPerPage =4, allSnacks.length =16, all snacks width is 1600% , each single snack is 1600%/16=100%
             }}
           >
-            {allSnacks.map((snack, index) => (
+            {allSnacks.map((snack) => (
               <div
                 key={snack.id}
                 className={styles.carouselItem}

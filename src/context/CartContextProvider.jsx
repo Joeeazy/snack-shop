@@ -29,9 +29,9 @@ const CartContextProvider = ({ children }) => {
     // Function to update the quantity of an item in the cart
   const updateQuantity = (id, quantity) => {
     setCartList(prevCartList =>
-      prevCartList.map(item =>
+      prevCartList.map(item =>item.id === id
         // Check if the current item's id matches the provided id
-        item.id === id
+        
           // If the id matches, return a new item object with the updated quantity
           ? { ...item, quantity: quantity }
           // If the id does not match, return the item unchanged
