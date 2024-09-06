@@ -5,9 +5,7 @@ A curated online shop for healthy snacks, aimed to combat the 3pm sugar crash. T
 ## Demo
 
 - [Pick Your Snack e-Shop](https://jennyzhong2022.github.io/e-shop/) - Say goodbye to the 3pm sugar crash! Shop curated healthy snacks and gifts.
-
-- ![Demo](./assets/demo.gif)
-- ![Demo](./src/assets/demo.gif)
+  ![Demo](./assets/demo.gif)
 
 ---
 
