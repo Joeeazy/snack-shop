@@ -1,8 +1,8 @@
-# React + Vite
+# Pick Your Snack e-Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Demo & Snippets
 
-Currently, two official plugins are available:
+- Say good-by to the 3pm sugar crash. Shop curated healthy snacks and gifts. [SHOP NOW]https://jennyzhong2022.github.io/e-shop/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
