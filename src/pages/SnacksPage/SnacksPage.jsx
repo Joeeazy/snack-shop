@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
-import { getAllSnack } from "../../services/snack";
-
 import styles from "./SnacksPage.module.scss";
 import SnackCard from "../../components/SnackCard/SnackCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-const SnacksPage = () => {
+const SnacksPage = ({ fetchSnacks, pageTitle, pageDescription }) => {
   const [snacks, setSnacks] = useState([]);
   const [fetchStatus, setFetchStatus] = useState("LOADING");
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setFetchStatus("LOADING");
-    getAllSnack()
+    fetchSnacks()
       .then((data) => {
         setSnacks(data);
         setFetchStatus("SUCCESS");
@@ -30,7 +28,7 @@ const SnacksPage = () => {
     <main className={styles.main}>
       {fetchStatus === "LOADING" && (
         <div className={styles.spinnerContainer}>
-          <FontAwesomeIcon icon={faSpinner} spin size="2x" />
+          <FontAwesomeIcon icon={faSpinner} spin size="4x" />
         </div>
       )}
       {fetchStatus === "FAILURE" && (
@@ -42,15 +40,9 @@ const SnacksPage = () => {
 
       {fetchStatus === "SUCCESS" && (
         <>
-          <p className={styles.snacksPageBigP}>Snack Boxes and Subscriptions</p>
+          <p className={styles.snacksPageBigP}>{pageTitle}</p>
           <div className={styles.pContainer}>
-            <p className={styles.p}>
-              Snack Proud has curated healthy snack boxes full of delicious
-              products that will keep you satiated between meals. Each box
-              contains small batch of Aussie snacks that are free of common
-              allergens but big on flavour. Discover new snacks each month. Buy
-              for yourself or your team, or give as a gift.
-            </p>
+            <p className={styles.p}>{pageDescription}</p>
           </div>
 
           <section className={styles.section}>
