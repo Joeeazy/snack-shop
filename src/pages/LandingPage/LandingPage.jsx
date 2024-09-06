@@ -3,8 +3,8 @@ import { getAllSnack, getCheapSnack } from "../../services/snack";
 import styles from "./LandingPage.module.scss";
 import SnackCard from "../../components/SnackCard/SnackCard";
 import { useNavigate } from "react-router-dom";
-import rightArrow from "./assets/icons8-right-arrow-50.png";
-import leftArrow from "./assets/icons8-back-50.png";
+import rightArrow from "../../assets/right.png";
+import leftArrow from "../../assets/back.png";
 
 const LandingPage = () => {
   const [allSnacks, setAllSnacks] = useState([]);
