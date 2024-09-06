@@ -117,8 +117,8 @@ export const db = getFirestore(app);
 
 ## Known Issues
 
-- **UI Not Updating**: The add, edit, and delete product functionality works in the backend (Firestore) but does not reflect changes on the UI without a manual refresh.
-- **Quantity Selection**: Products can be added multiple times, but there's no manual quantity selector when adding an item from the product grid. Instead, the quantity can only be adjusted from the cart.
+- **UI Not Updating**: The add, edit, and delete product functionality works in the backend (Firestore) but does not reflect changes on the UI.
+- **Quantity Selection**: Products can be added multiple times, but there's no manual quantity selector when adding an item from the product details. Instead, the quantity can only be adjusted from the cart.
 
 ---
 
