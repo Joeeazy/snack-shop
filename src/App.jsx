@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// use HashRouter as Router instead of BrowserRouter for github deploy
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import SnackLoader from "./containers/SnackLoader/SnackLoader";
 import AddSnackPage from "./pages/AddSnackPage/AddSnackPage";
@@ -19,7 +20,7 @@ import AllSnacksPage from "./pages/AllSnacksPage/AllSnacksPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -35,7 +36,6 @@ function App() {
             path="/snacks/giftPackSnacks"
             element={<GiftPackSnackPage />}
           />
-
           <Route path="/snacks/add" element={<AddSnackPage />} />
           <Route path="/snacks/:id" element={<SnackLoader />} />
           <Route path="/snacks/my-cart" element={<MyCartPage />} />
@@ -43,7 +43,7 @@ function App() {
         </Routes>
       </CartContextProvider>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }
 
