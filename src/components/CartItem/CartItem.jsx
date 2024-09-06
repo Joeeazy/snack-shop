@@ -23,7 +23,16 @@ const CartItem = ({ snack }) => {
   };
 
   const handleReduceItem = () => {
-    updateQuantity(snack.id, Math.max(quantity - 1, 0));
+    if (quantity === 1) {
+      const confirmed = window.confirm(
+        "Are you sure you want to remove this snack?"
+      );
+      if (confirmed) {
+        updateQuantity(snack.id, 0);
+      }
+    } else {
+      updateQuantity(snack.id, quantity - 1);
+    }
   };
 
   return (
