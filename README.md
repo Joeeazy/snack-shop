@@ -128,6 +128,7 @@ export const db = getFirestore(app);
 2. **Advanced Cart Features**: Implement a more intuitive quantity selector for products on the product page itself.
 3. **Persistent Cart**: Use local storage or session storage to persist the cart, and consider adding a dedicated "Cart" collection in Firestore.
 4. **Wishlist**: Allow users to save products to a wishlist.
+5. **Unit Testing**: Add Unit Testing.
 
 ---
 
