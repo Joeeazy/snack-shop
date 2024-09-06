@@ -6,6 +6,9 @@ A curated online shop for healthy snacks, aimed to combat the 3pm sugar crash. T
 
 - [Pick Your Snack e-Shop](https://jennyzhong2022.github.io/e-shop/) - Say goodbye to the 3pm sugar crash! Shop curated healthy snacks and gifts.
 
+- ![Demo](./assets/demo.gif)
+- ![Demo](./src/assets/demo.gif)
+
 ---
 
 ## Table of Contents
@@ -40,9 +43,8 @@ The purpose of this project includes:
 - **Home Page** with a grid of products and a carousel of featured items.
 - **Product Pages** for different types of snacks.
 - **Shopping Cart**: Users can add products to the cart, edit quantities, and remove items.
-- **Firestore Backend**: 
+- **Firestore Backend**:
   - Products must include details such as quantity, price per unit, brand, and available variants.
-
 
 ---
 
@@ -56,13 +58,15 @@ The purpose of this project includes:
    cd project-name
    npm install
    npm run dev
-2. **React**:  Install necessary dependencies for React:
+   ```
+2. **React**: Install necessary dependencies for React:
    ```bash
    npm install react react-dom
-3. **Development Server**:  Run the development server::
+   ```
+3. **Development Server**: Run the development server::
    ```bash
    npm run dev
-
+   ```
 
 ## Backend (Firestore):
 
@@ -79,12 +83,11 @@ const firebaseConfig = {
   projectId: "your-project-id",
   storageBucket: "your-storage-bucket",
   messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
+  appId: "your-app-id",
 };
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-
 ```
 
 ## Design Goals
@@ -111,7 +114,7 @@ export const db = getFirestore(app);
 ## Challenges
 
 - **Carousel Implementation**: Initially struggled with implementing the product carousel. Determining how many products should be displayed per slide and managing the transition when reaching the end were particularly difficult. After refining calculations, the feature was successfully implemented.
-  
+
 ---
 
 ## Known Issues
