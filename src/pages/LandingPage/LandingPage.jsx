@@ -3,6 +3,8 @@ import { getAllSnack, getCheapSnack } from "../../services/snack";
 import styles from "./LandingPage.module.scss";
 import SnackCard from "../../components/SnackCard/SnackCard";
 import { useNavigate } from "react-router-dom";
+import rightArrow from "./assets/icons8-right-arrow-50.png";
+import leftArrow from "./assets/icons8-back-50.png";
 
 const LandingPage = () => {
   const [allSnacks, setAllSnacks] = useState([]);
@@ -70,11 +72,11 @@ const LandingPage = () => {
       <section className={styles.carouselSection}>
         <div className={styles.carouselTileAndArrows}>
           <button onClick={prevSlide} className={styles.navButton}>
-            <img src="./src/assets/icons8-back-50.png" alt="Previous" />
+            <img src={leftArrow} alt="Previous" />
           </button>
           <p>Shop Our Best Selling Snack Boxes and Gifts</p>
           <button onClick={nextSlide} className={styles.navButton}>
-            <img src="./src/assets/icons8-right-arrow-50.png" alt="Next" />
+            <img src={rightArrow} alt="Next" />
           </button>
         </div>
         <div
