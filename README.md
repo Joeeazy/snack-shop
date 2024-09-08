@@ -106,7 +106,10 @@ export const db = getFirestore(app);
 - **Success Popup**: A message appears when items are successfully added to the cart.
 - **Loading Spinner**: Displays a loading animation while fetching data.
 - **Responsive Design**: Works smoothly on desktop, tablet, and mobile devices.
-  
+
+<img src="src/assets/responsive1.jpg" alt="27661725789736_ pic" width="200"/>
+<img src="src/assets/responsive2.jpg" alt="27671725789736_ pic" width="200"/>
+
 ---
 
 ## Challenges
