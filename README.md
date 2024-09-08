@@ -1,6 +1,6 @@
 # Pick Your Snack e-Shop
 
-A curated online shop for healthy snacks, aimed to combat the 3pm sugar crash. This full-stack web application offers a user-friendly experience where customers can browse, select, and purchase a variety of snacks. The project uses React for the frontend and Firebase Firestore for the backend, making the site dynamic and responsive.
+A curated online shop for healthy snacks, aimed to combat the 3pm sugar crash. This full-stack web application offers a user-friendly experience where customers can browse, select, and add a variety of snacks to cart. The project uses React for the frontend and Firebase Firestore for the backend, making the site dynamic and responsive.
 
 ## Demo
 
