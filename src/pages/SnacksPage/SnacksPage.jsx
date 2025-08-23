@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "./SnacksPage.module.scss";
 import SnackCard from "../../components/SnackCard/SnackCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -25,9 +24,9 @@ const SnacksPage = ({ fetchSnacks, pageTitle, pageDescription }) => {
   console.log(snacks);
 
   return (
-    <main className={styles.main}>
+    <main className="pt-25 px-5 text-center">
       {fetchStatus === "LOADING" && (
-        <div className={styles.spinnerContainer}>
+        <div className="text-custom-yellow h-screen flex items-start justify-center pt-[33vh]">
           <FontAwesomeIcon icon={faSpinner} spin size="4x" />
         </div>
       )}
@@ -40,12 +39,12 @@ const SnacksPage = ({ fetchSnacks, pageTitle, pageDescription }) => {
 
       {fetchStatus === "SUCCESS" && (
         <>
-          <p className={styles.snacksPageBigP}>{pageTitle}</p>
-          <div className={styles.pContainer}>
-            <p className={styles.p}>{pageDescription}</p>
+          <p className="text-4xl font-medium">{pageTitle}</p>
+          <div className="py-7.5 w-[60vw] mx-auto text-xl">
+            <p>{pageDescription}</p>
           </div>
 
-          <section className={styles.section}>
+          <section className="flex flex-wrap justify-evenly xl:px-12.5">
             {snacks.map((snack) => (
               <SnackCard key={snack.id} snack={snack} />
             ))}

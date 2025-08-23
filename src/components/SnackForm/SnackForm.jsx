@@ -40,81 +40,81 @@ const SnackForm = ({ handleUpdateSnack, handleAddSnack, formType, mode = 'Add', 
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="nameInput" style={{ display: 'block', marginBottom: '5px' }}>Snack Name</label>
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-5 border border-gray-300 rounded-lg">
+      <div className="mb-4">
+        <label htmlFor="nameInput" className="block mb-1">Snack Name</label>
         <input
           type="text"
           id="nameInput"
           name="snackName"
           value={formData.snackName}
           onChange={handleChange}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full p-2 box-border"
         />
       </div>
 
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="imageLinkInput" style={{ display: 'block', marginBottom: '5px' }}>Image Link</label>
+      <div className="mb-4">
+        <label htmlFor="imageLinkInput" className="block mb-1">Image Link</label>
         <input
           type="text"
           id="imageLinkInput"
           name="imageLink"
           value={formData.imageLink}
           onChange={handleChange}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full p-2 box-border"
         />
       </div>
 
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="brandInput" style={{ display: 'block', marginBottom: '5px' }}>Brand</label>
+      <div className="mb-4">
+        <label htmlFor="brandInput" className="block mb-1">Brand</label>
         <input
           type="text"
           id="brandInput"
           name="brand"
           value={formData.brand}
           onChange={handleChange}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full p-2 box-border"
         />
       </div>
 
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="priceInput" style={{ display: 'block', marginBottom: '5px' }}>Price</label>
+      <div className="mb-4">
+        <label htmlFor="priceInput" className="block mb-1">Price</label>
         <input
-          type="number"
+          type="text"
           id="priceInput"
           name="price"
           value={formData.price}
           onChange={handleChange}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full p-2 box-border"
         />
       </div>
 
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="descriptionInput" style={{ display: 'block', marginBottom: '5px' }}>Description</label>
+      <div className="mb-4">
+        <label htmlFor="descriptionInput" className="block mb-1">Description</label>
         <textarea
           type="text"
           id="descriptionInput"
           name="description"
           value={formData.description}
           onChange={handleChange}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full p-2 box-border"
         />
       </div>
 
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="stockInput" style={{ display: 'block', marginBottom: '5px' }}>Stock</label>
+      <div className="mb-4">
+        <label htmlFor="stockInput" className="block mb-1">Stock</label>
         <input
           type="text"
           id="stockInput"
           name="stock"
           value={formData.stock}
           onChange={handleChange}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full p-2 box-border"
         />
       </div>
 
       <div>
-        <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#FFF', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>{mode} Snack</button>
+        <button type="submit" className="px-5 py-2.5 bg-blue-600 text-white border-none rounded cursor-pointer">{mode} Snack</button>
       </div>
     </form>
   );

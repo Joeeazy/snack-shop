@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import styles from './MyCartPage.module.scss'
 import { CartContext } from '../../context/CartContextProvider';
 import CartItem from '../../components/CartItem/CartItem';
 import { useEffect } from 'react';
@@ -18,39 +17,39 @@ const MyCartPage = () => {
   return (
   <>
     {cartList.length === 0 ? (
-      <div className={styles.noItemSelectedMessage}>
+      <div className="mt-25 px-17 text-[#616161] md:px-12.5">
         <h1>No item selected.</h1>
       </div>
       ) : (
           
           
           
-          <div className={styles.myCartContainer}>
+          <div className="mt-25 px-17 text-[#616161] md:px-12.5">
 
-            <p className={styles.myCartP}>Shopping Cart</p>
+            <p className="text-center text-4xl font-medium md:text-2xl">Shopping Cart</p>
 
-          <div className={styles.cartItemsInformation}>
-          <div className={styles.productInformation}>
-            <span>Product</span>
+          <div className="flex justify-between items-center py-5 pt-5 pb-2.5 md:hidden">
+          <div className="flex-1 text-left">
+            <span className="text-xl">Product</span>
           </div>
       
 
-          <div className={styles.priceInformation}>
-              <span >Price</span>
-              <span>Quantity</span>
-              <span>Total</span>
+          <div className="flex justify-between items-center flex-[0.3] text-right lg:flex-[0.7]">
+              <span className="text-xl text-center">Price</span>
+              <span className="text-xl text-center">Quantity</span>
+              <span className="text-xl text-center">Total</span>
           </div>
           </div>  
           
-          <div className={styles.cartItems}>
+          <div className="w-full md:mt-10">
             {cartList.map((item) => (
               <CartItem key={item.id} snack={item} setSubTotal={setSubTotal} />
             ))}
             </div>
             
-            <div className={styles.cartCheckOutContainer}>
-              <p className={styles.subTotal}>Subtotal: ${subTotal}</p>
-              <button className={styles.checkOutBtn}>CHECK OUT</button>
+            <div className="flex flex-col items-end w-full py-4 border-t border-gray-300 mt-4">
+              <p className="text-4xl font-medium mb-4 md:text-2xl">Subtotal: ${subTotal}</p>
+              <button className="bg-custom-yellow border border-custom-yellow-light rounded p-5 cursor-pointer transition-all duration-300 hover:bg-custom-yellow-light">CHECK OUT</button>
             </div>
 
           </div>       

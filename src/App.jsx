@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 // use HashRouter as Router instead of BrowserRouter for github page deploy
 import { HashRouter as Router, Routes, Route } from "react-router-dom";

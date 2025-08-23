@@ -1,11 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  background-color: rgb(244, 244, 244);
-  font-family: "Playfair Display", serif;
-
+@import "tailwindcss";
+/* Custom styles that can't be easily converted to Tailwind */
+@layer components {
+  .navlink-hover::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+    margin: auto;
+  }
+  
+  .navlink:hover::after,
+  .navlink:focus::after {
+    width: 100%;
+  }
 }
