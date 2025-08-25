@@ -84,7 +84,7 @@ const NavBar = () => {
       </button>
 
       {/* Mobile Navigation Menu */}
-      <div className={`fixed top-16 left-0 w-full bg-yellow-400 shadow-lg transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
+      <div className={`fixed top-16 left-0 w-full bg-yellow-400 shadow-lg transition-transform duration-300 ease-in-out md:hidden z-50 ${isMenuOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
         <div className="flex flex-col py-4">
           <NavLink 
             to="/" 
@@ -132,7 +132,7 @@ const NavBar = () => {
       {/* Overlay when menu is open */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-opacity-50 z-40 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
           onClick={closeMenu}
         ></div>
       )}
