@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import HealthySnacksPage from "./pages/HealthySnacksPage/HealthySnacksPage";
 import GiftPackSnackPage from "./pages/GiftPackSnackPage/GiftPackSnackPage";
 import AllSnacksPage from "./pages/AllSnacksPage/AllSnacksPage";
+import AdminLayout from "./pages/AdminPages/Layout";
 
 // use react-toastify to set an alert! Place  { ToastContainer } in app.js so the alert only shows to the top right of screen on the snacksPage. If place  { ToastContainer }  in snack card component, it will show both inside card and top right of screen.
 
@@ -25,23 +26,33 @@ function App() {
         autoClose={2000}
         hideProgressBar={false}
       />
-      <NavBar />
-      <CartContextProvider>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/snacks" element={<AllSnacksPage />} />
-          <Route path="/snacks/healthySnacks" element={<HealthySnacksPage />} />
-          <Route
-            path="/snacks/giftPackSnacks"
-            element={<GiftPackSnackPage />}
-          />
-          <Route path="/snacks/add" element={<AddSnackPage />} />
-          <Route path="/snacks/:id" element={<SnackLoader />} />
-          <Route path="/snacks/my-cart" element={<MyCartPage />} />
-          <Route path="/snacks/:id/edit" element={<EditSnackPage />} />
-        </Routes>
-      </CartContextProvider>
-      <Footer />
+      <Routes>
+        {/* Admin Routes */}
+        <Route path="/admin/*" element={<AdminLayout />} />
+        
+        {/* Public Routes */}
+        <Route path="/*" element={
+          <>
+            <NavBar />
+            <CartContextProvider>
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/snacks" element={<AllSnacksPage />} />
+                <Route path="/snacks/healthySnacks" element={<HealthySnacksPage />} />
+                <Route
+                  path="/snacks/giftPackSnacks"
+                  element={<GiftPackSnackPage />}
+                />
+                <Route path="/snacks/add" element={<AddSnackPage />} />
+                <Route path="/snacks/:id" element={<SnackLoader />} />
+                <Route path="/snacks/my-cart" element={<MyCartPage />} />
+                <Route path="/snacks/:id/edit" element={<EditSnackPage />} />
+              </Routes>
+            </CartContextProvider>
+            <Footer />
+          </>
+        } />
+      </Routes>
     </Router>
   );
 }
